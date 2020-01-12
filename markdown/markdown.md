@@ -1,2 +1,0 @@
-
-markdown's learning information

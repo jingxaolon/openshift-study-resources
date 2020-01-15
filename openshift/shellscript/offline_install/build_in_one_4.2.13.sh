@@ -9,7 +9,7 @@ cd /data/ocp4
 
 #wget -O build.dist.sh https://raw.githubusercontent.com/wangzheng422/docker_env/dev/redhat/ocp4/files/4.2/docker_images/build.dist.sh
 
-#jqĞèµ¥¶À°²×°
+#jqéœ€å•ç‹¬å®‰è£…
 wget http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
 rpm -ivh epel-release-latest-7.noarch.rpm
 yum install -y jq
@@ -18,17 +18,17 @@ yum -y install podman docker-distribution pigz skopeo docker buildah python3-pip
 
 wget http://mirror.centos.org/centos/7/os/x86_64/Packages/python-rhsm-certificates-1.19.10-1.el7_4.x86_64.rpm
 rpm2cpio python-rhsm-certificates-1.19.10-1.el7_4.x86_64.rpm | cpio -iv --to-stdout ./etc/rhsm/ca/redhat-uep.pem | tee /etc/rhsm/ca/redhat-uep.pem
-#²»×°°üµÄÇé¿öÏÂ£¬ÌáÈ¡³öÎÄ¼ş
+#ä¸è£…åŒ…çš„æƒ…å†µä¸‹ï¼Œæå–å‡ºæ–‡ä»¶
 
 systemctl start docker
 
-docker login -u jingxiaolong -p jxl1198285059 registry.redhat.io
-docker login -u jingxiaolong -p jxl1198285059 registry.access.redhat.com
-docker login -u jingxiaolong -p jxl1198285059 registry.connect.redhat.com
+docker login -u ****** -p ****** registry.redhat.io
+docker login -u ****** -p ****** registry.access.redhat.com
+docker login -u ****** -p ****** registry.connect.redhat.com
 
-podman login -u jingxiaolong -p jxl1198285059 registry.redhat.io
-podman login -u jingxiaolong -p jxl1198285059 registry.access.redhat.com
-podman login -u jingxiaolong -p jxl1198285059 registry.connect.redhat.com
+podman login -u ****** -p ****** registry.redhat.io
+podman login -u ****** -p ****** registry.access.redhat.com
+podman login -u ****** -p ****** registry.connect.redhat.com
 
 # to download the pull-secret.json, open following link
 # https://cloud.redhat.com/openshift/install/metal/user-provisioned
@@ -50,7 +50,7 @@ openssl req \
    -x509 -days 3650 -out redhat.jxl.crt -subj \
    "/C=CN/ST=GD/L=SZ/O=Global Security/OU=IT Department/CN=*.redhat.jxl"
    
-#²»Ã÷ÒâÍ¼#
+#ä¸æ˜æ„å›¾#
 cp /etc/crts/redhat.jxl.crt /etc/pki/ca-trust/source/anchors/
 update-ca-trust extract
 ####

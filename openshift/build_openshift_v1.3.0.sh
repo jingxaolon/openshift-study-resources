@@ -9,7 +9,7 @@
 #略
 
 #install docker
-yum install -y docker vim net-tools
+yum install -y docker vim net-tools git
 systemctl enable docker
 systemctl restart docker
 systemctl disable firewalld
@@ -31,3 +31,5 @@ sleep 1
 
 #set runlevel 5
 systemctl set-default graphical
+
+shutdown -r now
